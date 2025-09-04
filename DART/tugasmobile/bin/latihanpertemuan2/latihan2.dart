@@ -1,21 +1,19 @@
 import 'dart:io';
 
 void main() {
-  List<String> usernames = ['admin1', 'admin2', 'user1'];
-  List<String> passwords = ['1234', '4321', '1111'];
+  stdout.write('Masukkan Username : ');
+  String? user = stdin.readLineSync();
 
-  stdout.write('Masukan Username : ');
-  String? inputUser = stdin.readLineSync();
+  stdout.write('Masukkan Password : ');
+  String? pass = stdin.readLineSync();
 
-  stdout.write('Masukan Password : ');
-  String? inputPass = stdin.readLineSync();
-
-  usernames.asMap().forEach((i, user) {
-    if (inputUser == user && inputPass == passwords[i]) {
-      print("Login berhasil");
-      return;
-    }
-  });
-
-  print("Login gagal, username dan password salah");
+  if (user == 'admin1' && pass == '1234') {
+    print("Login berhasil");
+  } else if (user == 'admin2' && pass == '4321') {
+    print("Login berhasil");
+  } else if (user == 'user1' && pass == '1111') {
+    print("Login berhasil");
+  } else {
+    print("Login gagal, username atau password salah");
+  }
 }
